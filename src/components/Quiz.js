@@ -18,6 +18,7 @@ const Quiz = () => {
         if (!quiz) {
             let x = apiAccess.getQuiz(id);
             setQuiz(x);
+            console.log(x);
         }
     });
 

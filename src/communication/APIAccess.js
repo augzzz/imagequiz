@@ -47,16 +47,15 @@ let apiAccess = {
                 console.log(x);
                 return x.result;
             });
-    }
+    },
 
-    /*
-    getScore: () => {
-        return fetch(`${backendAddress}/login`, {
+    addScore: (quiz_id, customer_id, score) => {
+        return fetch(`${backendAddress}/score`, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ quiz_id, customer_id, score })
         })
             .then(x => x.json())
             .then(x => {
@@ -64,7 +63,7 @@ let apiAccess = {
                 return x;
             });
     },
-    */
+    
 }
 
 export default apiAccess;
