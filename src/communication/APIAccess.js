@@ -47,8 +47,9 @@ let apiAccess = {
                 console.log(x);
                 return x.result;
             });
-    },
+    }
 
+    /*
     getScore: () => {
         return fetch(`${backendAddress}/login`, {
             method: 'Post',
@@ -63,6 +64,7 @@ let apiAccess = {
                 return x;
             });
     },
+    */
 }
 
 export default apiAccess;
