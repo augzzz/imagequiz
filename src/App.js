@@ -8,10 +8,11 @@ import Col from 'react-bootstrap/Col';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
+import Quiz from './components/Quiz';
 import { useState } from 'react';
 
 function App() {
-  const [customer, setCustomer] = useState('');
+  const [customer, setCustomer] = useState(undefined);
 
   let customerLoggedInHandler = (customerEmail) => {
     setCustomer(customerEmail);
@@ -42,6 +43,10 @@ function App() {
 
           <Route exact path='/login' element={<Login customerLoggedIn={customerLoggedInHandler} />}>
           </Route>
+
+          <Route exact path='/quiz/:id' element={<Quiz />}>
+          </Route>
+
         </Routes>
 
         <Row>
