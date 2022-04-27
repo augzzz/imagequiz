@@ -1,5 +1,5 @@
-let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
-//let backendAddress = 'http://localhost:4002';
+//let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
+let backendAddress = 'http://localhost:4002';
 
 
 let apiAccess = {
