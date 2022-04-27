@@ -19,6 +19,7 @@ const Home = () => {
     useEffect(() => {
         apiAccess.getFlowers()
             .then(x => {
+                //console.log(x);
                 setFlowers(x);
             })
             .catch(error => {
@@ -31,7 +32,6 @@ const Home = () => {
         <Container>
             <Row xs={1} md={3} className="g-4 text-center">
                 {flowers.map((x, index) => (
-
                     <Col key={index}>
                         <Card className="h-100" onClick={() => takeTheQuiz(x.name)}>
                             <Card.Img variant="top" src={x.picture} />
@@ -43,7 +43,6 @@ const Home = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-
                 ))}
             </Row>
         </Container>

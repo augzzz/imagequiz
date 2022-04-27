@@ -37,7 +37,7 @@ const Quiz = () => {
                             </Card.Body>
                             <ListGroup>
                                 {
-                                    quiz.questions[currentQuestionNumber].choices.map(x =>
+                                    quiz.questions[currentQuestionNumber].choices.split(',').map(x =>
                                         <ListGroup.Item>{x}</ListGroup.Item>)
                                 }
                             </ListGroup>

@@ -1,5 +1,5 @@
-//let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
-let backendAddress = 'http://localhost:4002';
+let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
+//let backendAddress = 'http://localhost:4002';
 
 
 let apiAccess = {
@@ -21,7 +21,7 @@ let apiAccess = {
     login: (email, password) => {
         return fetch(`${backendAddress}/login`, {
             method: 'Post',
-            credentials: "include",
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': true
@@ -38,7 +38,7 @@ let apiAccess = {
     getFlowers: () => {
         return fetch(`${backendAddress}/flowers`, {
             method: 'Get',
-            credentials: "include",
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': true
@@ -54,7 +54,7 @@ let apiAccess = {
     getQuiz: (name) => {
         return fetch(`${backendAddress}/quiz/${name}`, {
             method: 'Get',
-            credentials: "include",
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': true
