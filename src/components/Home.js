@@ -18,14 +18,10 @@ const Home = () => {
 
     useEffect(() => {
         apiAccess.getFlowers()
-            .then(x => {
-                //console.log(x);
-                setFlowers(x);
-            })
+            .then(x => setFlowers(x))
             .catch(error => {
                 console.log(error);
-                alert('Something went wrong...');
-            });
+            })
     }, []);
 
     return (

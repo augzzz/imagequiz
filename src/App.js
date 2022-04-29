@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, useParams } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -20,6 +20,11 @@ function App() {
     setCustomer(customerEmail);
   };
 
+  let customerLoggedOutHandler = () => {
+    localStorage.removeItem('customer');
+    setCustomer(undefined);
+  }
+
   return (
     <HashRouter>
       <Container fluid>
@@ -32,7 +37,7 @@ function App() {
 
         <Row>
           <Col>
-            <Menu customer={customer} />
+            <Menu customer={customer} customerLoggedOut={customerLoggedOutHandler} />
           </Col>
         </Row>
 
@@ -41,6 +46,9 @@ function App() {
           </Route>
 
           <Route exact path='/register' element={<Register />}>
+          </Route>
+
+          <Route exact path='/login/:from?' element={<Login customerLoggedIn={customerLoggedInHandler} />}>
           </Route>
 
           <Route exact path='/login' element={<Login customerLoggedIn={customerLoggedInHandler} />}>
@@ -66,10 +74,12 @@ function App() {
 }
 
 const ProtectedRoute = ({ customer, children }) => {
+  const { id } = useParams();
+
   if (customer) {
     return children;
   } else {
-    return <Navigate to='/login' />;
+    return <Navigate to={`/login/${id}`} />;
   }
 }
 
