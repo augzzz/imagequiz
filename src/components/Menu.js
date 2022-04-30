@@ -8,7 +8,7 @@ const Menu = (props) => {
         apiAccess.logout()
             .then(x => props.customerLoggedOut())
             .catch(error => console.log(error));
-    }
+    };
 
     return (
         <Navbar bg="light" expand="lg">

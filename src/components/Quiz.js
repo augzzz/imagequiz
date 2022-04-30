@@ -16,9 +16,15 @@ const Quiz = () => {
 
     useEffect(() => {
         if (!quiz) {
-            let x = apiAccess.getQuiz(id);
-            setQuiz(x);
-            console.log(x);
+            let x = apiAccess.getQuiz(id)
+                .then(y => {
+                    setQuiz(x);
+                    console.log(y);
+                })
+                .catch(e => {
+                    console.log(e);
+                    alert('Something went wrong...')
+                });
         }
     });
 
