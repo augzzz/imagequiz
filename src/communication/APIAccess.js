@@ -78,7 +78,7 @@ let apiAccess = {
         })
             .then(x => x.json())
             .then(x => {
-                console.log(x.result);
+                console.log(x);
                 return x.result;
             });
     },
