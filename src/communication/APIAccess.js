@@ -63,7 +63,6 @@ let apiAccess = {
             .then(x => x.json())
             .then(x => {
                 console.log(x);
-                console.log(window.location.origin);
                 return x.result;
             });
     },
