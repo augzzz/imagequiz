@@ -9,6 +9,7 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { from } = useParams();
+    console.log(`from in Login ${from}`);
 
     const navigate = useNavigate();
 

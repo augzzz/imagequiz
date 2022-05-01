@@ -86,8 +86,10 @@ let apiAccess = {
     addScore: (quiz_id, customer_id, score) => {
         return fetch(`${backendAddress}/score`, {
             method: 'Post',
+            credentials: 'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({ quiz_id, customer_id, score })
         })
