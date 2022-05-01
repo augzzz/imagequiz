@@ -35,6 +35,7 @@ let apiAccess = {
             });
     },
 
+    
     logout: () => {
         return fetch(`${backendAddress}/logout`, {
             method: 'Post',
