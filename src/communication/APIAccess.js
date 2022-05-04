@@ -1,7 +1,6 @@
 import configuration from '../configuration';
 
-let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
-//let backendAddress = configuration.backendAddress;
+let backendAddress = configuration.backendAddress;
 
 
 let apiAccess = {
