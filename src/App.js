@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route, useParams } from 'react-router-dom';
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
+import FederatedLogin from './components/FederatedLogin';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -52,6 +53,9 @@ function App() {
           </Route>
 
           <Route exact path='/login' element={<Login customerLoggedIn={customerLoggedInHandler} />}>
+          </Route>
+
+          <Route path='/google/:username/:name' element={<FederatedLogin provider="google" customerLoggedIn={customerLoggedInHandler} />}>
           </Route>
 
           <Route exact path='/quiz/:id' element={

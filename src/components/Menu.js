@@ -2,8 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import apiAccess from '../communication/APIAccess';
+import congifuration from '../configuration.js';
 
 const Menu = (props) => {
+    let google = `${congifuration.backendAddress}/auth/google`;
+
     let logout = () => {
         apiAccess.logout()
             .then(x => props.customerLoggedOut())
@@ -29,6 +32,7 @@ const Menu = (props) => {
                                 <>
                                     <Nav.Link href="#/register">Register</Nav.Link>
                                     <Nav.Link href="#/login">Login</Nav.Link>
+                                    <Nav.Link href={google}>Sign In with Google</Nav.Link>
                                 </>
                         }
                     </Nav>

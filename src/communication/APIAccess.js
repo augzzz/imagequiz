@@ -1,5 +1,7 @@
-let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
-//let backendAddress = 'http://localhost:4002';
+import configuration from '../configuration';
+
+//let backendAddress = 'https://augzzz-imagequiz-api.herokuapp.com';
+let backendAddress = configuration.backendAddress;
 
 
 let apiAccess = {
@@ -99,6 +101,22 @@ let apiAccess = {
                 return x;
             });
     },
+
+    isLoggedIn: () => {
+        return fetch(`${backendAddress}/isloggedin`, {
+            method: 'Get',
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Credentials": true
+            }
+         })
+        .then(x => x.json())
+        .then(x => {
+            console.log(x);
+            return x.result;
+        });
+    }
     
 }
 
